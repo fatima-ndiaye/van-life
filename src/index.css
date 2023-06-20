@@ -1,0 +1,275 @@
+/* ====================
+    Custom properties  
+====================== */
+:root 
+{
+    /* colors */
+    --clr-dark: 0 0% 9%;
+    --clr-light: 33 100% 96%;
+    --clr-accent: 25 63% 81%;
+
+    /* Font Sizes */
+    --fs-h1: 3rem;
+    --fs-h2: 1.75rem;
+    --fs-h3: 1.05rem;
+    --fs-body: 1rem;
+
+    /* Font Weights */
+    --fw-light:300;
+    --fw-reg: 400;
+    --fw-bold: 700;
+
+    /* font-families */
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Oregano', cursive;
+}
+@media (min-width:35em) 
+{
+    :root {
+        --fs-h1: 4rem;
+        --fs-h2: 2.5rem;
+        --fs-h3: 1.25rem;
+        --fs-body: 1rem;
+    }
+}
+
+@media (min-width:45em) 
+{
+    :root {
+        --fs-h1: 5rem;
+        --fs-h2: 2.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.1rem;
+
+    }
+}
+
+/* ===========
+    Reset  
+============== */
+
+/* == Box-sizing ==  */
+/* == Remove default margin == */
+/* == Remove default padding == */
+*,
+*::before,
+*::after 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* == Set up the body == */
+body
+{
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    color: hsl( var(--clr-dark) );
+    background-color: hsl( var(--clr-light) );
+    line-height: 1.5;
+    min-height: 100vh;
+}
+/* == Remove text decoration on links ==*/
+a
+{
+    text-decoration: none;
+}
+/* == Remove text decoration on links ==*/
+img,
+picture
+{
+    max-width: 100%;
+    display: block;
+}
+/* == Remove text decoration on links ==*/
+input,
+button,
+textarea,
+select
+{
+    font: inherit;
+}
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) 
+{
+
+    *,
+    *::before,
+    *::after 
+    {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* ====================
+    Utility classes
+======================*/
+/* == General == */
+.flex 
+{
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+.d-block 
+{
+    display: block;
+}
+.flow > * + * /*---*+*==*:not(:first-child)---*/
+{
+    margin-top: var(--flow-space, 1rem);
+}
+.flow--space-small
+{
+    --flow-space: .75rem;
+}
+.container
+{
+    padding-inline: 2em;
+    margin-inline: auto;
+    max-width: 90rem;
+}
+.link-btn 
+{
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* == Colors == */
+
+.bg-dark {background-color: hsl( var(--clr-dark) );}
+.bg-accent {background-color: hsl(var(--clr-accent));}
+.bg-light {background-color: hsl(var(--clr-light));}
+
+.text-dark{color: hsl(var(--clr-dark));}
+.text-accent{color: hsl(var(--clr-accent));}
+.text-light{color: hsl(var(--clr-light));}
+
+/* == Typography == */
+.ff-primary{font-family: var(--ff-primary);}
+.ff-secondary{font-family: var(--ff-secondary);}
+
+.letter-spacing-1 { letter-spacing: 2.5px; }
+.letter-spacing-2 { letter-spacing: 1.5px; }
+.letter-spacing-3 { letter-spacing: 1px; }
+
+.fs-h1{ font-size: var(--fs-h1); }
+.fs-h2{ font-size: var(--fs-h2); }
+.fs-h3{ font-size: var(--fs-h3); }
+.fs-body{ font-size: var(--fs-body); }
+
+.fs-h1,
+.fs-h2,
+.fs-h3
+{
+    line-height: 1.1;
+}
+
+.fw-light{font-weight: var(--fw-light);}
+.fw-reg{font-weight: var(--fw-reg);}
+.fw-bold{font-weight: var(--fw-bold);}
+
+.uppercase{text-transform: uppercase;}
+
+/* ====================
+    Components
+======================*/
+
+header
+{
+    justify-content: space-between;
+    align-items: center;
+    height: 13vh;
+}
+nav a 
+{
+    color: #4D4D4D;
+    padding-bottom: 4px;
+}
+nav a:hover
+{
+    color: #161616;
+    border-bottom: 1px solid #161616;
+}
+/* == HOME CSS == */
+.home-container
+{
+    background-image: url(./assets/bg-hero.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #666666;
+    background-blend-mode: multiply;
+    height: calc(100vh - 13vh)
+}
+.home-content
+{
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 36rem;
+}
+.home-title
+{
+    line-height: 0.9;
+}
+.home-btn 
+{
+    padding: 0.75em 2em;
+    background-color: #8B0F19;
+}
+/* == ABOUT CSS == */
+.about-page-container .container
+{
+    max-width: 70rem;
+    margin-left: auto;
+}
+.about-hero
+{
+    height: 50vh;
+    background-image: url(./assets/about-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:bottom center;
+}
+.about-page-content
+{
+    margin-block: 2.5em;
+}
+.about-page-content h2
+{
+    margin-bottom: 0.75em;
+}
+.about-page-content p 
+{
+    margin-top: 1em;
+    
+}
+.about-page-cta
+{
+    padding: 2em;
+    border-radius: 5px;
+    margin-bottom: 2em; 
+    flex-direction: column;
+}
+.link-btn-cta
+{
+    padding: 0.75em 1.75em;
+    border-radius: 10px;
+    align-self: start;
+}
+@media (min-width:45em) 
+{
+    .about-page-cta
+    {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/* FBCEB1*/
