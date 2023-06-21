@@ -112,6 +112,11 @@ select
     display: flex;
     gap: var(--gap, 1rem);
 }
+.grid
+{
+    display: grid;
+    gap: var(--gap, 1rem);
+}
 .d-block 
 {
     display: block;
@@ -224,7 +229,7 @@ nav a:hover
     padding: 0.75em 2em;
     background-color: #8B0F19;
 }
-/* == ABOUT CSS == */
+/* == ABOUT PAGE CSS == */
 .about-page-container .container
 {
     max-width: 70rem;
@@ -273,3 +278,61 @@ nav a:hover
     }
 }
 /* FBCEB1*/
+
+/* == VANS PAGE CSS == */
+.van-list-container
+{
+    margin-top: 2.5em;
+    flex-direction: column;
+}
+.van-list
+{
+   
+   justify-items: center;
+}
+@media (min-width:35em) 
+{
+    .van-list
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.van-tile
+{
+    flex-direction: column;
+    margin-bottom: 1.5em;
+}
+.van-img
+{
+    border-radius: 5px;
+}
+.van-info
+{
+    justify-content: space-between;
+}
+.van-type
+{
+    align-self: flex-start;
+    padding: 0.5em 1.25em;
+    color: #4D4D4D;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+.van-type.selected
+{
+    color: #FFEAD0;
+}
+.van-type.simple:hover,
+.van-type.simple.selected {
+    background-color: #E17654;
+}
+
+.van-type.rugged:hover,
+.van-type.rugged.selected {
+    background-color: #115E59;
+}
+
+.van-type.luxury:hover,
+.van-type.luxury.selected {
+    background-color: #161616;
+}

@@ -13,20 +13,21 @@ function Vans() {
 
     const vanEl = vans.map(van =>{
         return (
-        <div className='van' key={van.id}>
+        <div className='van-tile flex' key={van.id}>
             <img src={van.imageUrl} className='van-img' />
-            <div className='van-info'>
+            <div className='van-info flex'>
                     <h3 className='van-name fs-h3'>{van.name}</h3>
-                    <p><span>{van.price}</span>/day</p>
+                    <p className='fw-bold'>${van.price}<span className='fw-reg'>/day</span></p>
             </div>
+            <i className={`van-type ${van.type} selected bg-accent`}>{van.type}</i>
 
         </div>)
     })
     return (
-        <div className='vans-container container'>
-            <h2>Explore our van options</h2>
+        <div className='van-list-container container flex'>
+            <h2 className='fs-h2 letter-spacing-2'>Explore our van options</h2>
             <div className='vans-filters'></div>
-            <div className='vans-list'>
+            <div className='van-list grid'>
                 {vanEl}
             </div>
           
