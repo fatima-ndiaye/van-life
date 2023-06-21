@@ -28,7 +28,7 @@
     :root {
         --fs-h1: 4rem;
         --fs-h2: 2.5rem;
-        --fs-h3: 1.25rem;
+        --fs-h3: 1.22rem;
         --fs-body: 1rem;
     }
 }
@@ -287,10 +287,9 @@ nav a:hover
 }
 .van-list
 {
-   
    justify-items: center;
 }
-@media (min-width:35em) 
+@media (min-width:36em) 
 {
     .van-list
     {
@@ -299,9 +298,15 @@ nav a:hover
 }
 .van-tile
 {
-    flex-direction: column;
     margin-bottom: 1.5em;
 }
+.van-tile a
+{
+    height: 100%;
+    flex-direction: column;
+
+}
+
 .van-img
 {
     border-radius: 5px;
