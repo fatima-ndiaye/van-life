@@ -305,18 +305,22 @@ nav a:hover
 .van-img
 {
     border-radius: 5px;
+    height: 90%;
 }
 .van-info
 {
     justify-content: space-between;
+    align-items: center;
 }
 .van-type
 {
+    font-style: normal;
     align-self: flex-start;
     padding: 0.5em 1.25em;
     color: #4D4D4D;
     transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
+    border-radius: 5px;
 }
 .van-type.selected
 {
