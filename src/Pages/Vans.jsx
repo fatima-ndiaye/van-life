@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Vans() {
 
@@ -9,17 +10,22 @@ function Vans() {
             .then(data => 
                 setVans(data.vans))
     },[])
+    /**
+     * Challenge: Wrap the contents of the "van-tile" div in a 
+     * Link that sends the user to `/vans/${van-id-here}`.
+     */
 
     const vanEl = vans.map(van =>{
         return (
         <div className='van-tile flex' key={van.id}>
-            <img src={van.imageUrl} className='van-img' />
-            <div className='van-info flex'>
-                    <h3 className='van-name fs-h3'>{van.name}</h3>
-                    <p className='fw-bold'>${van.price}<span className='fw-reg'>/day</span></p>
-            </div>
-            <i className={`van-type ${van.type} selected bg-accent`}>{van.type}</i>
-
+            <Link to={`/vans/${van.id}`}>
+                    <img src={van.imageUrl} className='van-img' />
+                    <div className='van-info flex'>
+                        <h3 className='van-name fs-h3'>{van.name}</h3>
+                        <p className='fw-bold'>${van.price}<span className='fw-reg'>/day</span></p>
+                    </div>
+                    <i className={`van-type ${van.type} selected bg-accent`}>{van.type}</i>
+            </Link>
         </div>)
     })
     return (
