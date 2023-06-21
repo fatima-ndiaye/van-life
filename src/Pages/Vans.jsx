@@ -10,10 +10,6 @@ function Vans() {
             .then(data => 
                 setVans(data.vans))
     },[])
-    /**
-     * Challenge: Wrap the contents of the "van-tile" div in a 
-     * Link that sends the user to `/vans/${van-id-here}`.
-     */
 
     const vanEl = vans.map(van =>{
         return (
