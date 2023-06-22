@@ -181,7 +181,7 @@ select
 /* ====================
     Components
 ======================*/
-
+/* == HEADER CSS == */
 header
 {
     justify-content: space-between;
@@ -198,6 +198,16 @@ nav a:hover
     color: #161616;
     border-bottom: 1px solid #161616;
 }
+/* == Footer CSS == */
+footer
+{
+    padding-block: 1em;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;   
+}
+
 /* == HOME CSS == */
 .home-container
 {
