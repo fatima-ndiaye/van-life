@@ -5,9 +5,9 @@ function Header()
 {
     return(
         <header className='flex container'>
-            <p className='ff-secondary fs-h2 fw-bold letter-spacing-3'>#VanLife</p>
+            <Link className="site-logo ff-secondary fs-h2 fw-bold letter-spacing-3 text-dark" to="/">#VanLife</Link>
             <nav className='flex'>
-                <Link to="/">Home</Link>
+                <Link to="/host">Host</Link>
                 <Link to="/about">About</Link>
                 <Link to="/vans">Vans</Link>
             </nav>

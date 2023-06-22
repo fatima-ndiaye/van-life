@@ -2,8 +2,11 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './Pages/Home'
 import About from './Pages/About'
-import Vans from './Pages/Vans'
-import VanDetail from './Pages/vanDetail'
+import Vans from './Pages/Vans/Vans'
+import VanDetail from './Pages/Vans/vanDetail'
+import Dashboard from './Pages/Host/Dashboard'
+import Income from './Pages/Host/Income'
+import Reviews from './Pages/Host/Reviews'
 import Layout from './components/Layout'
 import "./server"
 
@@ -16,6 +19,9 @@ function App() {
             <Route path='/' element={<Home />}/>
             <Route path='/about' element={<About />} />
             <Route path='/vans' element={<Vans />} />
+            <Route path='/host' element={<Dashboard />} /> 
+            <Route path='/host/income' element={<Income />} /> 
+            <Route path='/host/reviews' element={<Reviews />} /> 
             <Route path='/vans/:id' element={<VanDetail />}/>
         </Route>
       </Routes>
