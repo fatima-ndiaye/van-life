@@ -8,6 +8,7 @@ import Dashboard from './Pages/Host/Dashboard'
 import Income from './Pages/Host/Income'
 import Reviews from './Pages/Host/Reviews'
 import Layout from './components/Layout'
+import HostLayout from './components/HostLayout'
 import "./server"
 
 function App() {
@@ -19,10 +20,13 @@ function App() {
             <Route path='/' element={<Home />}/>
             <Route path='/about' element={<About />} />
             <Route path='/vans' element={<Vans />} />
-            <Route path='/host' element={<Dashboard />} /> 
-            <Route path='/host/income' element={<Income />} /> 
-            <Route path='/host/reviews' element={<Reviews />} /> 
             <Route path='/vans/:id' element={<VanDetail />}/>
+            <Route element={<HostLayout />}>
+              <Route path='/host/' element={<Dashboard />} />
+              <Route path='/host/income' element={<Income />} />
+              <Route path='/host/reviews' element={<Reviews />} /> 
+            </Route>
+
         </Route>
       </Routes>
     </BrowserRouter>
