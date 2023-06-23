@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink,Link} from 'react-router-dom'
 
 function Header() 
 {
@@ -7,9 +7,9 @@ function Header()
         <header className='flex container'>
             <Link className="site-logo ff-secondary fs-h2 fw-bold letter-spacing-3 text-dark" to="/">#VanLife</Link>
             <nav className='flex'>
-                <Link to="/host">Host</Link>
-                <Link to="/about">About</Link>
-                <Link to="/vans">Vans</Link>
+                <NavLink to="/host">Host</NavLink>
+                <NavLink to="/about">About</NavLink>
+                <NavLink to="/vans">Vans</NavLink>
             </nav>
         </header>
     )
