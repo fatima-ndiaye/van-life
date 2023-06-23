@@ -13,7 +13,7 @@ function HostLayout()
     return(
         <div className="container">
             <nav className='flex host-nav'>
-                <NavLink to="/host" style={({ isActive }) => isActive ? activeStyles : null}>Dashboard</NavLink>
+                <NavLink to="/host" end style={({ isActive }) => isActive ? activeStyles : null}>Dashboard</NavLink>
                 <NavLink to="/host/income" style={({ isActive }) => isActive ? activeStyles : null}>Income</NavLink>
                 <NavLink to="/host/reviews" style={({ isActive }) => isActive ? activeStyles : null}>Reviews</NavLink>
             </nav>
