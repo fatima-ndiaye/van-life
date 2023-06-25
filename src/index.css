@@ -409,3 +409,50 @@ footer
     align-self: start;
     padding: 0.75em 2em;
 }
+/* == HOST VANS PAGE CSS == */
+
+.van-host-list-container
+{
+    margin-top: 2em;
+    flex-direction: column;
+}
+.van-host-list
+{
+    margin-top: 1.5em;
+    flex-direction: column;
+}
+
+.host-van-tile
+{
+   align-items: center;
+   background-color: white;
+   padding: 1em;
+}
+.host-van-tile > img {
+    height: 100px;
+    border-radius: 5px;
+}
+@media (min-width:50em) 
+{
+    .van-host-list
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+    .host-van-link-tile 
+    {
+        min-width: 420px;
+    }
+    .host-van-tile
+    {
+        padding: 1.25em;
+    }
+    .host-van-tile > img 
+    {
+        height: 140px;
+    }
+
+
+    
+}
