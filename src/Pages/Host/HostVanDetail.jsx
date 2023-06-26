@@ -1,11 +1,43 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 
 function HostVanDetail() 
 {
-    const param = useParams()
+    const params = useParams()
+    const [hostVan, setHostVan] = useState(null)
+    useEffect(()=>
+    {
+        fetch(`/api/host/vans/${params.id}`)
+            .then(res => res.json())
+            .then(data => setHostVan(data.vans))
+    },[params.id])
+     console.log(hostVan)
     return (
-        <h1>Host Van Detail {param.id}</h1>
+        <div className='host-van-detail-container'>
+         {
+            hostVan ?
+                <div className="host-van-detail flex">
+                    <img src={hostVan.imageUrl} />
+                    <div className="host-van-detail-info flex">
+                        <i className={`van-type ${hostVan.type} selected bg-accent`}>{hostVan.type}</i>
+                        <h3 className="fs-h3">{hostVan.name}</h3>
+                        <p className='fw-bold'>${hostVan.price}<span className='fw-reg'>/day</span></p>
+                    </div>
+                </div>
+            :<h2>Loading...</h2>
+         }
+
+        </div>
     )
 }
 export default HostVanDetail
+
+/**
+ * Challenge (not optional!): build the shared UI portion of the
+ * Host Van Detail page. This is
+ * 
+ * Optional portion: also style it to look like the design.
+ * 
+ * For now, get the data from a request to `/api/host/vans/:id`
+ * and display the van image, name, price, type
+ */

@@ -207,6 +207,11 @@ nav a:hover
     color: #161616;
     border-bottom: 1px solid #161616;
 }
+/* == HOST NAV CSS == */
+.host-nav
+{
+    margin-bottom: 2em;
+}
 /* == MAIN CSS == */
 main
 {
@@ -332,7 +337,6 @@ footer
     flex-direction: column;
 
 }
-
 .van-img
 {
     border-radius: 5px;
@@ -347,11 +351,18 @@ footer
 {
     font-style: normal;
     align-self: flex-start;
-    padding: 0.5em 1.25em;
+    padding: 0.3em 0.75em;
     color: #4D4D4D;
     transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
     border-radius: 5px;
+}
+@media (min-width:35em) 
+{
+    .van-type
+    {
+        padding: 0.5em 1.25em;
+    }
 }
 .van-type.selected
 {
@@ -361,7 +372,6 @@ footer
 .van-type.simple.selected {
     background-color: #E17654;
 }
-
 .van-type.rugged:hover,
 .van-type.rugged.selected {
     background-color: #115E59;
@@ -413,7 +423,6 @@ footer
 
 .van-host-list-container
 {
-    margin-top: 2em;
     flex-direction: column;
 }
 .van-host-list
@@ -452,7 +461,35 @@ footer
     {
         height: 140px;
     }
-
-
-    
+}
+/* == HOST VAN DEATIL PAGE CSS == */
+.host-van-detail-container
+{
+    background-color: white;
+    padding: 1.5em;
+}
+.host-van-detail
+{
+    gap: 1rem;
+    align-items: center;
+}
+.host-van-detail-info
+{
+    flex-direction: column;
+}
+.host-van-detail > img 
+{
+    height: 130px;
+    border-radius: 5px;
+}
+@media (min-width:35em) 
+{
+    .host-van-detail
+    {
+        gap:2rem
+    }
+    .host-van-detail > img 
+    {
+        height: 160px;
+    }
 }
