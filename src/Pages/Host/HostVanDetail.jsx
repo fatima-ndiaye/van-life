@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, Link, Outlet } from 'react-router-dom'
+import HostHeader from '../../components/HostHeader'
 
 function HostVanDetail() 
 {
@@ -11,7 +12,7 @@ function HostVanDetail()
             .then(res => res.json())
             .then(data => setHostVan(data.vans))
     },[params.id])
-     console.log(hostVan)
+    
     return (
     <section>
         <Link to=".." relative='path' className="back-button text-dark">&larr; <span>Back to all vans</span></Link>
@@ -29,6 +30,7 @@ function HostVanDetail()
                 </div>
             :<h2>Loading...</h2>
          }
+         <HostHeader />
         <Outlet />
         </div>
     </section>
