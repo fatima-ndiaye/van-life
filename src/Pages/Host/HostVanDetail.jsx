@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 function HostVanDetail() 
 {
@@ -13,6 +13,9 @@ function HostVanDetail()
     },[params.id])
      console.log(hostVan)
     return (
+    <section>
+        <Link to=".." relative='path' className="back-button text-dark">&larr; <span>Back to all vans</span></Link>
+
         <div className='host-van-detail-container'>
          {
             hostVan ?
@@ -28,6 +31,7 @@ function HostVanDetail()
          }
 
         </div>
+    </section>
     )
 }
 export default HostVanDetail

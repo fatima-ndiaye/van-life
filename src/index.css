@@ -131,10 +131,18 @@ select
 }
 .container
 {
-    padding-inline: 2em;
+    padding-inline: 1em;
     margin-inline: auto;
     max-width: 90rem;
 }
+@media (min-width:25em)
+{
+    .container 
+    {
+        padding-inline: 2em;     
+    }
+}
+
 .link-btn 
 {
     display: inline-block;
@@ -142,6 +150,17 @@ select
     border-radius: 5px;
     cursor: pointer;
 }
+.back-button
+{
+    display: block;
+    text-decoration: none;
+    margin-block:1em;
+}
+.back-button span:hover 
+{
+    text-decoration: underline;
+}
+    
 /* == Colors == */
 
 .bg-dark {background-color: hsl( var(--clr-dark) );}
@@ -195,7 +214,6 @@ header
     align-items: center;
     height: 13vh;
     width: 100%;
-    
 }
 nav a 
 {
@@ -284,8 +302,7 @@ footer
 }
 .about-page-content p 
 {
-    margin-top: 1em;
-    
+    margin-top: 1em; 
 }
 .about-page-cta
 {
@@ -335,7 +352,6 @@ footer
 {
     height: 100%;
     flex-direction: column;
-
 }
 .van-img
 {
