@@ -33,7 +33,13 @@ function Vans() {
     return (
         <div className='van-list-container container flex'>
             <h2 className='fs-h2 letter-spacing-2'>Explore our van options</h2>
-            <div className='vans-filters'></div>
+            <div className='van-list-filters flex'>
+                <button onClick={() => setSearchParam({ type: "simple" })} className='van-type simple'>simple</button>
+                <button onClick={() => setSearchParam({ type: "luxury" })} className='van-type luxury'>Luxury</button>
+                <button onClick={() => setSearchParam({ type: "rugged" })} className='van-type rugged'>Rugged</button>
+                <button onClick={() => setSearchParam({ })} className='van-type clear-filters'>Clear Filters</button>
+
+            </div>
             <div className='van-list grid'>
                 {vanEl}
             </div>
