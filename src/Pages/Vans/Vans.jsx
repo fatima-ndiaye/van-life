@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 function Vans() {
-
+    const [searchParam, setSearchParam] = useSearchParams()
+    const typeFilter = searchParam.get("type")
+    
     const [vans, setVans] = useState([])
     useEffect(()=>{
         fetch('/api/vans')
@@ -11,7 +13,11 @@ function Vans() {
                 setVans(data.vans))
     },[])
 
-    const vanEl = vans.map(van =>{
+    const displayedVans = typeFilter 
+                            ? vans.filter(van => van.type.toLowerCase() === typeFilter)
+                            :vans
+
+    const vanEl = displayedVans.map(van =>{
         return (
         <div className='van-tile' key={van.id}>
             <Link to={`/vans/${van.id}`} className='text-dark flex'>
