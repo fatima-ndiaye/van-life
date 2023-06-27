@@ -30,8 +30,8 @@ function HostVanDetail()
                 </div>
             :<h2>Loading...</h2>
          }
-         <HostHeader />
-        <Outlet />
+        <HostHeader />
+        <Outlet context={hostVan}/>
         </div>
     </section>
     )
