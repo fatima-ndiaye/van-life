@@ -234,6 +234,10 @@ nav a:hover
 {
     margin-block: 1.25em;
 }
+.host-nav-detail a 
+{
+    padding-bottom: 0;
+}
 /* == MAIN CSS == */
 main
 {
