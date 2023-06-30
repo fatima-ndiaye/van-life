@@ -11,7 +11,7 @@ function HostVans() {
 
     const hostVanEl = hostVans.map(hostVan =>{
         return(
-            <Link to={`/host/vans/${hostVan.id}`} key={hostVan.id} className='host-van-link-tile text-dark'>
+            <Link to={hostVan.id} key={hostVan.id} className='host-van-link-tile text-dark'>
                 <div className='host-van-tile flex bg-light' key={hostVan.id}>
                     <img src={hostVan.imageUrl}  className='host-van-img'/>
                     <div className='host-van-info'>
