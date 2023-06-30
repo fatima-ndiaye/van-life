@@ -13,13 +13,14 @@ function VanDetail()
             .then(data => setVan(data.vans))
     },[params.id])
     const search = location.state?.search || ""
+    const type = location.state?.type || "all"
     return (
         <div className="van-detail-container container">
             <Link
                 to={`..${search}`}
                 relative="path"
                 className="back-button text-dark"
-            >&larr; <span>Back to vans</span></Link>
+            >&larr; <span>Back to {type} vans</span></Link>
             {
                 van ? 
                 <div className="van-detail flex">
