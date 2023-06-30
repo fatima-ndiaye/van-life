@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './Pages/Home'
 import About from './Pages/About'
+import NotFound from './Pages/NotFound'
 import Vans from './Pages/Vans/Vans'
 import VanDetail from './Pages/Vans/vanDetail'
 import Dashboard from './Pages/Host/Dashboard'
@@ -40,7 +41,7 @@ function App() {
 
             <Route path='reviews' element={<Reviews />} /> 
           </Route>
-
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

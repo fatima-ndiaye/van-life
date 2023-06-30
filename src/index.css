@@ -556,3 +556,15 @@ footer
 {
     max-width: 200px;
 }
+/* == 404 PAGE CSS == */
+.not-found-container
+{
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.not-found-container a 
+{
+    padding: 1em 2em;
+}
