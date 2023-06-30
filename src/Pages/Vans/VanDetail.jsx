@@ -5,19 +5,21 @@ function VanDetail()
 {
     const params = useParams()
     const location = useLocation()
+    console.log(location)
     const [van, setVan] = useState(null)
     useEffect(()=>{
         fetch(`/api/vans/${params.id}`)
             .then(res => res.json())
             .then(data => setVan(data.vans))
     },[params.id])
+    const search = location.state?.search || ""
     return (
         <div className="van-detail-container container">
             <Link
-                to=".."
+                to={`..${search}`}
                 relative="path"
                 className="back-button text-dark"
-            >&larr; <span>Back to all vans</span></Link>
+            >&larr; <span>Back to vans</span></Link>
             {
                 van ? 
                 <div className="van-detail flex">
