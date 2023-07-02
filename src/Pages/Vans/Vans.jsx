@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { getVans } from "../../api"
+
+export function loader()
+{
+    return "Vans data goes here"
+}
+
 function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
     const typeFilter = searchParams.get("type")
