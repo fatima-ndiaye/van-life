@@ -7,16 +7,28 @@ function Vans() {
     
     const [vans, setVans] = useState([])
     const [loading, setLoading] = React.useState(false)
-    useEffect(()=>{
+    const [error, setError] = React.useState(null)
+
+    useEffect(() => {
         async function loadVans() {
             setLoading(true)
-            const data = await getVans()
-            setVans(data)
+            try {
+                const data = await getVans()
+                setVans(data)
+
+            } catch (err) 
+            {
+                setError(err)
+            }
+            finally
+            {
+                setLoading(false)
+            }
             setLoading(false)
         }
 
         loadVans()
-    },[])
+    }, [])
 
     const displayedVans = typeFilter 
                             ? vans.filter(van => van.type.toLowerCase() === typeFilter)
@@ -49,6 +61,10 @@ function Vans() {
     if(loading)
     {
         return <div className='container'><h2>Loading ...</h2></div>
+    }
+    if (error)
+    {
+        return <div className='container'><h2>There was an error: {error.message}</h2></div>
     }
     return (
         <div className='van-list-container container flex'>
