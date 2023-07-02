@@ -6,10 +6,13 @@ function Vans() {
     const typeFilter = searchParams.get("type")
     
     const [vans, setVans] = useState([])
+    const [loading, setLoading] = React.useState(false)
     useEffect(()=>{
         async function loadVans() {
+            setLoading(true)
             const data = await getVans()
             setVans(data)
+            setLoading(false)
         }
 
         loadVans()
@@ -42,6 +45,10 @@ function Vans() {
             }
             return prevParams
         })
+    }
+    if(loading)
+    {
+        return <div className='container'><h2>Loading ...</h2></div>
     }
     return (
         <div className='van-list-container container flex'>
