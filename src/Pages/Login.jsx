@@ -37,7 +37,7 @@ export default function Login() {
                         value={loginFormData.password}
                     />
                 </div>
-                <button className="link-btn login-btn bg-accent">Log in</button>
+                <button className="link-btn login-btn bg-accent text-dark">Log in</button>
             </form>
         </div>
     )
