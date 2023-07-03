@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } 
 import Home from './Pages/Home'
 import About from './Pages/About'
 import NotFound from './Pages/NotFound'
+import Login from "./pages/Login"
 import Vans, {loader as vansLoader} from './Pages/Vans/Vans'
 import VanDetail from './Pages/Vans/vanDetail'
 import Dashboard from './Pages/Host/Dashboard'
@@ -22,6 +23,7 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout />}>
     <Route path='/' element={<Home />} />
     <Route path='about' element={<About />} />
+    <Route path='login' element={<Login />} />
     <Route path='vans' element={<Vans />} loader={vansLoader} errorElement={<Error/>}/>
     <Route path='vans/:id' element={<VanDetail />} />
 

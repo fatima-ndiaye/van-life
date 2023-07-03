@@ -215,6 +215,17 @@ header
     height: 13vh;
     width: 100%;
 }
+header .login-icon 
+{
+    height: 18px;
+    width: 18px;
+}
+
+header .login-link 
+{
+    display: inline-flex;
+    align-items: center;
+}
 nav a 
 {
     color: #4D4D4D;
@@ -567,4 +578,60 @@ footer
 .not-found-container a 
 {
     padding: 1em 2em;
+}
+/* == LOGIN PAGE CSS == */
+.login-container 
+{
+    flex-direction: column;
+}
+.login-form
+{
+    flex-direction: column;
+    padding-inline: 27px;
+}
+.input-container
+{
+    flex-direction: column;
+}
+@media (min-width:35em) 
+{
+    .input-container
+    {
+        flex-direction: row; 
+    }
+    .login-btn
+    {
+        align-self: flex-start;
+    }
+
+}
+.input-container > input 
+{
+    border: 1px solid rgba(209, 213, 219);
+    padding: 0.25em 0;
+    text-indent: 10px;
+    font-family: var(--ff-primary);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.input-container > input:focus 
+{
+    outline: none;
+}
+
+.input-container > input:first-of-type 
+{
+    border-radius: 6px 6px 0px 0px;
+}
+
+.input-container > input:last-of-type 
+{
+    border-radius: 0px 0px 6px 6px;
+}
+
+.login-btn
+{
+    padding: 0.35em 2.5em;
+    color: white;
+    font-family: inherit;
 }
