@@ -583,11 +583,13 @@ footer
 .login-container 
 {
     flex-direction: column;
+    justify-content: center;
+    height: 50vh;
 }
 .login-form
 {
+    margin-top: 1em;
     flex-direction: column;
-    padding-inline: 27px;
 }
 .input-container
 {
