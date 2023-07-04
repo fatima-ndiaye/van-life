@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from "react"
 import {Link, useParams, useLocation, useLoaderData} from 'react-router-dom'
 import { getVans } from "../../api"
 
