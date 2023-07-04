@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
+import { getHostVans } from "../../api"
+
+export function loader({params})
+{ 
+    return getHostVans(params.id)
+}
 
 function HostVans() {
-    const [hostVans, setHostVans] = useState([])
-    useEffect(() => {
-        fetch('/api/host/vans')
-            .then(res => res.json())
-            .then(data =>setHostVans(data.vans))
-    }, [])
+    const hostVans = useLoaderData()
+
 
     const hostVanEl = hostVans.map(hostVan =>{
         return(
@@ -28,11 +30,7 @@ function HostVans() {
         <div className='van-host-list-container container flex'>
             <h2>Your Listed Vans</h2>
             <div className='van-host-list flex'>
-                {
-                    hostVans.length > 0 ?  hostVanEl 
-                    :
-                    <h2>Loading</h2>
-                }
+                {hostVanEl}
             </div>
             
         </div>
