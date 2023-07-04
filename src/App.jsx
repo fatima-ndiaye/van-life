@@ -17,6 +17,7 @@ import HostVanPhotos  from './Pages/Host/HostVanPhotos'
 import Layout from './components/Layout'
 import HostLayout from './components/HostLayout'
 import Error from './components/Error'
+import { requireAuth } from "./utils"
 import "./server"
 
 const router = createBrowserRouter(createRoutesFromElements(
