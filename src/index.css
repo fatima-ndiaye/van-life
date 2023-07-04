@@ -586,6 +586,11 @@ footer
     justify-content: center;
     height: 50vh;
 }
+.login-container > h3 
+{
+    color: #8B0F19;
+    font-size: 0.75em;
+}
 .login-form
 {
     margin-top: 1em;

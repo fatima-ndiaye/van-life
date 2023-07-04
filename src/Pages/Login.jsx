@@ -1,7 +1,14 @@
 import React from "react"
+import { useLoaderData } from "react-router-dom"
 
+export function loader({request})
+{
+    return new URL(request.url).searchParams.get("message")
+}
 export default function Login() {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+    const message = useLoaderData()
+
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -19,6 +26,7 @@ export default function Login() {
     return (
         <div className="login-container container flex">
             <h2 className="fs-h2 fw-light">Sign in to your account</h2>
+            {message && <h3 className="">{message}</h3>}
             <form onSubmit={handleSubmit} className="login-form flex">
                 <div className="input-container flex">
                     <input
