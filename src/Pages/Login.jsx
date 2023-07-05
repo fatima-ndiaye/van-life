@@ -1,5 +1,6 @@
-import React from "react"
-import { useLoaderData } from "react-router-dom"
+import React, {useState} from "react"
+import { useLoaderData, useNavigate } from "react-router-dom"
+import {loginUser} from '../api'
 
 export function loader({request})
 {
@@ -7,12 +8,23 @@ export function loader({request})
 }
 export default function Login() {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+    const [status, setStatus] = useState("idle")
+    const [error, setError] = useState(null)
     const message = useLoaderData()
+    const navigate = useNavigate()
 
 
-    function handleSubmit(e) {
+    function handleSubmit(e) 
+    {
         e.preventDefault()
-        console.log(loginFormData)
+        setStatus("submitting")
+        setError(null)
+        loginUser(loginFormData)
+        .then(data => navigate("/host"))
+        .catch(err => setError(err))
+        .finally(() => setStatus("idle"))
+       
+
     }
 
     function handleChange(e) {
@@ -22,11 +34,12 @@ export default function Login() {
             [name]: value
         }))
     }
-
+  
     return (
         <div className="login-container container flex">
             <h2 className="fs-h2 fw-light">Sign in to your account</h2>
             {message && <h3 className="">{message}</h3>}
+            {error && <h3 className="">{error.message}</h3>}
             <form onSubmit={handleSubmit} className="login-form flex">
                 <div className="input-container flex">
                     <input
@@ -44,7 +57,9 @@ export default function Login() {
                         value={loginFormData.password}
                     />
                 </div>
-                <button className="link-btn login-btn bg-accent text-dark">Log in</button>
+                <button className="link-btn login-btn bg-accent text-dark" disabled={status === "submitting"}>
+                    {status === "submitting"? "Logging in...": "Log in"}
+                </button>
             </form>
         </div>
     )
