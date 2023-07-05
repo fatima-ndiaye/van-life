@@ -18,6 +18,7 @@ import Layout from './components/Layout'
 import HostLayout from './components/HostLayout'
 import Error from './components/Error'
 import { requireAuth } from "./utils"
+localStorage.removeItem("loggedin")
 import "./server"
 
 const router = createBrowserRouter(createRoutesFromElements(

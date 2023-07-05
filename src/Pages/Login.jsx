@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import { useLoaderData, useNavigate, Form, redirect } from "react-router-dom"
 import {loginUser} from '../api'
 
@@ -12,7 +12,7 @@ export async function action({ request })
     const email = formData.get("email")
     const password = formData.get("password")
     const data = await loginUser({ email, password })
-    localStorage.setItem('loggedin', true)
+    localStorage.setItem("loggedin", true)
     return redirect("/host")
 }
 
@@ -21,19 +21,6 @@ export default function Login() {
     const [error, setError] = useState(null)
     const message = useLoaderData()
     const navigate = useNavigate()
-
-
-    /*function handleSubmit(e) 
-    {
-        e.preventDefault()
-        setStatus("submitting")
-        setError(null)
-        loginUser(loginFormData)
-        .then(data => navigate("/host", {replace:true}))
-        .catch(err => setError(err))
-        .finally(() => setStatus("idle"))
-    }*/
-
   
     return (
         <div className="login-container container flex">
