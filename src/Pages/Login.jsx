@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import { useLoaderData, useNavigate, Form } from "react-router-dom"
+import { useLoaderData, useNavigate, Form, redirect } from "react-router-dom"
 import {loginUser} from '../api'
 
 export function loader({request})
@@ -13,7 +13,7 @@ export async function action({ request })
     const password = formData.get("password")
     const data = await loginUser({ email, password })
     localStorage.setItem('loggedin', true)
-    return null
+    return redirect("/host")
 }
 
 export default function Login() {
