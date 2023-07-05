@@ -20,7 +20,7 @@ export default function Login() {
         setStatus("submitting")
         setError(null)
         loginUser(loginFormData)
-        .then(data => navigate("/host"))
+        .then(data => navigate("/host", {replace:true}))
         .catch(err => setError(err))
         .finally(() => setStatus("idle"))
        
