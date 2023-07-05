@@ -1,6 +1,7 @@
 import React, {useState} from "react"
-import { useLoaderData, useNavigate, Form, redirect } from "react-router-dom"
+import { useLoaderData, useNavigate, Form } from "react-router-dom"
 import {loginUser} from '../api'
+import { redirect } from "../redirectUtils"
 
 export function loader({request})
 {
