@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import { useLoaderData, useNavigate, Form } from "react-router-dom"
 import {loginUser} from '../api'
 
@@ -12,12 +12,11 @@ export async function action({ request })
     const email = formData.get("email")
     const password = formData.get("password")
     const data = await loginUser({ email, password })
-    console.log(data)
+    localStorage.setItem('loggedin', true)
     return null
 }
 
 export default function Login() {
-    const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
     const [status, setStatus] = useState("idle")
     const [error, setError] = useState(null)
     const message = useLoaderData()
