@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense} from 'react'
 import { Link, useSearchParams, useLoaderData, defer, Await } from 'react-router-dom'
 import { getVans } from "../../api"
 
@@ -71,10 +71,11 @@ function Vans()
     return (
         <div className='van-list-container container flex'>
             <h2 className='fs-h2 letter-spacing-2'>Explore our van options</h2>
-            <Await resolve={dataPromise.vans}>
-                {renderVansEl}
-
-            </Await>
+            <Suspense fallback={<h2 className='fs-h3 fw-light'>Loading vans ...</h2>}>
+                <Await resolve={dataPromise.vans}>
+                    {renderVansEl}
+                </Await>
+            </Suspense>
           
             
         </div>
