@@ -11,7 +11,6 @@ function Vans()
 {
     const [searchParams, setSearchParams] = useSearchParams()
     const typeFilter = searchParams.get("type")
-    const [error, setError] = React.useState(null)
     const dataPromise = useLoaderData()
 
 
@@ -25,10 +24,6 @@ function Vans()
             }
             return prevParams
         })
-    }
-    if (error)
-    {
-        return <div className='container'><h2>There was an error: {error.message}</h2></div>
     }
 
     function renderVansEl (vans)  
